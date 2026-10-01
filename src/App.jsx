@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Header from './components/Header';
 import TabBar from './components/TabBar';
+import StickyNote from './components/StickyNote';
 import WorkoutList from './components/WorkoutList';
 import './App.css';
 
@@ -13,13 +14,16 @@ const STARTER_WORKOUTS = [
 function App() {
   const [workouts, setWorkouts] = useState(STARTER_WORKOUTS);
   const [activeTab, setActiveTab] = useState('note');
+  const [noteText, setNoteText] = useState('');
 
   return (
     <div className="app">
       <Header />
       <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
       <main>
-        {activeTab === 'note' && <p>Sticky note goes here.</p>}
+        {activeTab === 'note' && (
+          <StickyNote noteText={noteText} onNoteChange={setNoteText} />
+        )}
         {activeTab === 'calendar' && <WorkoutList workouts={workouts} />}
         {activeTab === 'stats' && <p>Stats go here.</p>}
       </main>
