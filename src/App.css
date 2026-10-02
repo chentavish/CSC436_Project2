@@ -1,0 +1,118 @@
+.app {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  
+  /* Header */
+  .header h1 {
+    margin: 0;
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-size: 3rem;
+    line-height: 1;
+  }
+  
+  .header p {
+    margin: 0.5rem 0 0;
+    color: var(--muted);
+  }
+  
+  /* Tabs */
+  .tab-bar {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0 1.75rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  
+  .tab {
+    padding: 0.5rem 0;
+    margin-bottom: -1px;
+    border: none;
+    border-bottom: 3px solid transparent;
+    background: none;
+    font: inherit;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  
+  .tab:hover {
+    color: var(--ink);
+  }
+  
+  .tab.active {
+    color: var(--pen);
+    border-bottom-color: var(--pen);
+  }
+  
+  .tab:focus-visible {
+    outline: 2px solid var(--pen);
+    outline-offset: 4px;
+  }
+  
+  /* Sticky note */
+  .sticky-note {
+    padding: 1.25rem 1.5rem 1.5rem;
+    background: var(--note);
+    transform: rotate(-1deg);
+    box-shadow: 0 12px 20px -10px var(--note-shadow);
+  }
+  
+  .sticky-note:focus-within {
+    outline: 2px solid var(--pen);
+    outline-offset: 6px;
+  }
+  
+  .note-hint {
+    margin: 0 0 0.75rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  
+  .sticky-note textarea {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    resize: none;
+    font-family: 'Patrick Hand', 'Comic Sans MS', cursive;
+    font-size: 1.35rem;
+    line-height: 2rem;
+    color: var(--ink);
+    background: repeating-linear-gradient(
+      transparent 0 calc(2rem - 1px),
+      rgba(31, 42, 54, 0.15) calc(2rem - 1px) 2rem
+    );
+    background-attachment: local;
+  }
+  
+  .sticky-note textarea::placeholder {
+    color: rgba(31, 42, 54, 0.45);
+  }
+  
+  /* Workout list */
+  .workout-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .workout-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  
+  .workout-name {
+    font-weight: 600;
+  }
+  
+  .workout-detail,
+  .empty {
+    color: var(--muted);
+  }

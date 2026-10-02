@@ -2,7 +2,7 @@ function Header() {
     return (
       <header className="header">
         <h1>Workout Tracker</h1>
-        <p>Log your exercises and check them off as you go.</p>
+        <p>Jot down today's workout and it'll show up on your calendar.</p>
       </header>
     );
   }
