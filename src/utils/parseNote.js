@@ -1,6 +1,6 @@
 import { normalizeExerciseName } from './exercises';
 
-export function parseNote(text, dateKey, knownNames = []) {
+export function parseNote(text, dateKey, knownNames) {
   return text
     .split('\n')
     .map((line) => line.trim())

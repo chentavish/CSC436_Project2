@@ -1,209 +1,221 @@
 .app {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 2.5rem 1.25rem 4rem;
-  }
-  
-  /* Header */
-  .header h1 {
-    margin: 0;
-    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-    font-size: 3rem;
-    line-height: 1;
-  }
-  
-  .header p {
-    margin: 0.5rem 0 0;
-    color: var(--muted);
-  }
-  
-  /* Tabs */
-  .tab-bar {
-    display: flex;
-    gap: 1.5rem;
-    margin: 2rem 0 1.75rem;
-    border-bottom: 1px solid var(--rule);
-  }
-  
-  .tab {
-    padding: 0.5rem 0;
-    margin-bottom: -1px;
-    border: none;
-    border-bottom: 3px solid transparent;
-    background: none;
-    font: inherit;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--muted);
-    cursor: pointer;
-  }
-  
-  .tab:hover {
-    color: var(--ink);
-  }
-  
-  .tab.active {
-    color: var(--pen);
-    border-bottom-color: var(--pen);
-  }
-  
-  .tab:focus-visible {
-    outline: 2px solid var(--pen);
-    outline-offset: 4px;
-  }
-  
-  /* Sticky note */
-  .sticky-note {
-    padding: 1.25rem 1.5rem 1.5rem;
-    background: var(--note);
-    transform: rotate(-1deg);
-    box-shadow: 0 12px 20px -10px var(--note-shadow);
-  }
-  
-  .sticky-note:focus-within {
-    outline: 2px solid var(--pen);
-    outline-offset: 6px;
-  }
-  
-  .note-hint {
-    margin: 0 0 0.75rem;
-    font-size: 0.9rem;
-    color: var(--muted);
-  }
-  
-  .sticky-note textarea {
-    display: block;
-    width: 100%;
-    padding: 0;
-    border: none;
-    outline: none;
-    resize: none;
-    font-family: 'Patrick Hand', 'Comic Sans MS', cursive;
-    font-size: 1.35rem;
-    line-height: 2rem;
-    color: var(--ink);
-    background: repeating-linear-gradient(
-      transparent 0 calc(2rem - 1px),
-      rgba(31, 42, 54, 0.15) calc(2rem - 1px) 2rem
-    );
-    background-attachment: local;
-  }
-  
-  .sticky-note textarea::placeholder {
-    color: rgba(31, 42, 54, 0.45);
-  }
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
 
-  .suggestions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.4rem;
-    margin-top: 0.5rem;
-  }
+/* Header */
+.header h1 {
+  margin: 0;
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 3rem;
+  line-height: 1;
+}
 
-  .suggestion {
-    padding: 0.2rem 0.6rem;
-    border: 1px solid rgba(31, 42, 54, 0.3);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.45);
-    font-family: 'Patrick Hand', 'Comic Sans MS', cursive;
-    font-size: 1.05rem;
-    color: var(--ink);
-    cursor: pointer;
-  }
+.header p {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+}
 
-  .suggestion.first,
-  .suggestion:hover {
-    border-color: var(--pen);
-    color: var(--pen);
-  }
+/* Tabs */
+.tab-bar {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2rem 0 1.75rem;
+  border-bottom: 1px solid var(--rule);
+}
 
-  .suggestion-hint {
-    font-size: 0.8rem;
-    color: var(--muted);
-  }
+.tab {
+  padding: 0.5rem 0;
+  margin-bottom: -1px;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: none;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+}
 
-  .save-note {
-    margin-top: 1rem;
-    padding: 0.4rem 0.9rem;
-    border: 1px solid var(--ink);
-    background: none;
-    font: inherit;
-    color: var(--ink);
-    cursor: pointer;
-  }
+.tab:hover {
+  color: var(--ink);
+}
 
-  .save-note:hover {
-    color: var(--pen);
-    border-color: var(--pen);
-  }
+.tab.active {
+  color: var(--pen);
+  border-bottom-color: var(--pen);
+}
 
-  .save-note:focus-visible {
-    outline: 2px solid var(--pen);
-    outline-offset: 2px;
-  }
-  
-  /* Workout list */
-  .workout-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  .workout-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.85rem 0;
-    border-bottom: 1px solid var(--rule);
-  }
-  
-  .workout-name {
-    margin-right: auto;
-    font-weight: 600;
-  }
+.tab:focus-visible {
+  outline: 2px solid var(--pen);
+  outline-offset: 4px;
+}
 
+/* Sticky note */
+.sticky-note {
+  padding: 1.25rem 1.5rem 1.5rem;
+  background: var(--note);
+  transform: rotate(-1deg);
+  box-shadow: 0 12px 20px -10px var(--note-shadow);
+}
+
+.sticky-note:focus-within {
+  outline: 2px solid var(--pen);
+  outline-offset: 6px;
+}
+
+.note-hint {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.sticky-note textarea {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: 'Patrick Hand', 'Comic Sans MS', cursive;
+  font-size: 1.35rem;
+  line-height: 2rem;
+  color: var(--ink);
+  background: repeating-linear-gradient(
+    transparent 0 calc(2rem - 1px),
+    rgba(31, 42, 54, 0.15) calc(2rem - 1px) 2rem
+  );
+  background-attachment: local;
+}
+
+.sticky-note textarea::placeholder {
+  color: rgba(31, 42, 54, 0.45);
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.suggestion {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid rgba(31, 42, 54, 0.3);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  font-family: 'Patrick Hand', 'Comic Sans MS', cursive;
+  font-size: 1.05rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.suggestion.first,
+.suggestion:hover {
+  border-color: var(--pen);
+  color: var(--pen);
+}
+
+.suggestion-hint {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.save-note {
+  margin-top: 1rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--ink);
+  background: none;
+  font: inherit;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.save-note:hover {
+  color: var(--pen);
+  border-color: var(--pen);
+}
+
+.save-note:focus-visible {
+  outline: 2px solid var(--pen);
+  outline-offset: 2px;
+}
+
+/* Workout list */
+.workout-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workout-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.workout-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-right: auto;
+}
+
+.workout-name {
+  font-weight: 600;
+}
+
+.workout-notes {
+  font-family: 'Patrick Hand', 'Comic Sans MS', cursive;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.delete-workout {
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.workout-item:hover .delete-workout,
+.delete-workout:focus-visible {
+  opacity: 1;
+}
+
+.delete-workout:hover {
+  color: #c0392b;
+}
+
+.delete-workout:focus-visible {
+  outline: 2px solid var(--pen);
+}
+
+/* Touch screens have no hover, so always show the delete button there */
+@media (hover: none) {
   .delete-workout {
-    width: 1.75rem;
-    height: 1.75rem;
-    padding: 0;
-    border: none;
-    background: none;
-    font-size: 1.25rem;
-    line-height: 1;
-    color: var(--muted);
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.15s;
-  }
-
-  .workout-item:hover .delete-workout,
-  .delete-workout:focus-visible {
     opacity: 1;
   }
+}
 
-  .delete-workout:hover {
-    color: #c0392b;
-  }
+.workout-detail,
+.empty {
+  color: var(--muted);
+}
 
-  .delete-workout:focus-visible {
-    outline: 2px solid var(--pen);
-  }
-
-  /* Touch screens have no hover, so always show the delete button there */
-  @media (hover: none) {
-    .delete-workout {
-      opacity: 1;
-    }
-  }
-  
-  .workout-detail,
-  .empty {
-    color: var(--muted);
-  }
-
-  /* Calendar */
+/* Calendar */
 .calendar-header {
   display: flex;
   align-items: center;
@@ -270,6 +282,11 @@
 .calendar-day.selected {
   background: var(--pen);
   color: #fff;
+}
+
+/* Keep a yellow marker on a selected day so you can still tell it has a workout */
+.calendar-day.selected.has-workout {
+  box-shadow: inset 0 -6px 0 var(--note);
 }
 
 .calendar-day:focus-visible,

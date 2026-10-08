@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import CalendarDay from './CalendarDay';
 import WorkoutList from './WorkoutList';
-import { toDateKey, formatDateKey } from '../utils/dates';
+import { toDateKey, formatDateKey, getTodayKey, getMonthStart } from '../utils/dates';
 
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 function Calendar({ workouts, onDeleteWorkout }) {
-  const today = new Date();
-  const todayKey = toDateKey(today);
-  const [viewMonth, setViewMonth] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
+  const todayKey = getTodayKey();
+  const [viewMonth, setViewMonth] = useState(() => getMonthStart(todayKey));
   const [selectedDate, setSelectedDate] = useState(todayKey);
 
   const year = viewMonth.getFullYear();
@@ -30,7 +29,11 @@ function Calendar({ workouts, onDeleteWorkout }) {
   return (
     <section className="calendar">
       <div className="calendar-header">
-        <button className="month-button" onClick={() => changeMonth(-1)} aria-label="Previous month">
+        <button
+          className="month-button"
+          onClick={() => changeMonth(-1)}
+          aria-label="Previous month"
+        >
           ‹
         </button>
         <h2>{viewMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</h2>
@@ -41,7 +44,9 @@ function Calendar({ workouts, onDeleteWorkout }) {
 
       <div className="calendar-grid">
         {WEEKDAYS.map((weekday) => (
-          <div key={weekday} className="weekday">{weekday}</div>
+          <div key={weekday} className="weekday">
+            {weekday}
+          </div>
         ))}
         {dayKeys.map((dateKey, index) => (
           <CalendarDay
