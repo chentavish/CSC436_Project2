@@ -8,6 +8,7 @@
   --pen: #2457c5;                       /* blue accent for active tab and focus */
   --note: #ffe46b;                      /* sticky note yellow */
   --note-shadow: rgba(31, 42, 54, 0.25); /* shadow under the sticky note */
+  --tile: #eef1f4;                 /* calendar day */
 }
 
 * {

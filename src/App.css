@@ -116,3 +116,83 @@
   .empty {
     color: var(--muted);
   }
+
+  /* Calendar */
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 1.75rem;
+}
+
+.month-button {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--rule);
+  background: none;
+  font-size: 1.25rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.month-button:hover {
+  border-color: var(--ink);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.35rem;
+}
+
+.weekday {
+  padding-bottom: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--muted);
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  border: 1px solid transparent;
+  background: var(--tile);
+  font: inherit;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.calendar-day:hover {
+  border-color: var(--rule);
+}
+
+.calendar-day.has-workout {
+  background: var(--note);
+  font-weight: 600;
+}
+
+.calendar-day.today {
+  border-color: var(--ink);
+}
+
+.calendar-day.selected {
+  background: var(--pen);
+  color: #fff;
+}
+
+.calendar-day:focus-visible,
+.month-button:focus-visible {
+  outline: 2px solid var(--pen);
+  outline-offset: 2px;
+}
+
+.selected-day {
+  margin: 2rem 0 0.5rem;
+  font-size: 1.1rem;
+}

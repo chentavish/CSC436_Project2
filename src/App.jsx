@@ -2,13 +2,13 @@ import { useState } from 'react';
 import Header from './components/Header';
 import TabBar from './components/TabBar';
 import StickyNote from './components/StickyNote';
-import WorkoutList from './components/WorkoutList';
+import Calendar from './components/Calendar';
 import './App.css';
 
 const STARTER_WORKOUTS = [
-  { id: 1, name: 'Push-ups', sets: 3, reps: 15, done: false },
-  { id: 2, name: 'Squats', sets: 4, reps: 12, done: false },
-  { id: 3, name: 'Lunges', sets: 3, reps: 10, done: true },
+  { id: 1, date: '2026-10-01', name: 'Pull-ups', sets: 3, reps: 8, weight: 0, notes: '' },
+  { id: 2, date: '2026-10-05', name: 'Bench press', sets: 3, reps: 10, weight: 135, notes: 'felt heavy' },
+  { id: 3, date: '2026-10-05', name: 'Squats', sets: 4, reps: 8, weight: 185, notes: '' },
 ];
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         {activeTab === 'note' && (
           <StickyNote noteText={noteText} onNoteChange={setNoteText} />
         )}
-        {activeTab === 'calendar' && <WorkoutList workouts={workouts} />}
+        {activeTab === 'calendar' && <Calendar workouts={workouts} />}
         {activeTab === 'stats' && <p>Stats go here.</p>}
       </main>
     </div>
