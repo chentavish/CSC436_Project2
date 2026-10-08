@@ -1,16 +1,36 @@
-# React + Vite
+# Workout Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A React app for logging workouts the way you'd jot them on a sticky note. Type one exercise per line, hit Log workout, and that day lights up on the calendar.
 
-Currently, two official plugins are available:
+**Live site:** https://csc436project2.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Sticky note entry:** one exercise per line in the format `name, sets, reps, weight, notes`. Weight and notes are optional.
+- **Autofill:** suggests exercise names and values from your past workouts as you type. Press Tab or click a suggestion to fill it in.
+- **Calendar:** days with logged workouts turn yellow. Click a day to see what you did, and hover over a workout to delete it.
+- **Saves automatically:** workouts are stored in your browser, so they're still there after a refresh.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Example note:
 
-## Expanding the Oxlint configuration
+```
+bench press, 3, 10, 135, felt heavy
+push-ups, 3, 15
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Run it locally
+
+You'll need Node.js installed.
+
+```bash
+git clone https://github.com/chentavish/CSC436_Project2
+cd CSC436_Project2
+npm install
+npm run dev
+```
+
+Then open http://localhost:5173.
+
+## Built with
+
+React and Vite, deployed on Netlify.
