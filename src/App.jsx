@@ -3,6 +3,9 @@ import Header from './components/Header';
 import TabBar from './components/TabBar';
 import StickyNote from './components/StickyNote';
 import Calendar from './components/Calendar';
+import { parseNote } from './utils/parseNote';
+import { toDateKey } from './utils/dates';
+import { getExerciseNames } from './utils/exercises';
 import './App.css';
 
 const STARTER_WORKOUTS = [
@@ -15,6 +18,19 @@ function App() {
   const [workouts, setWorkouts] = useState(STARTER_WORKOUTS);
   const [activeTab, setActiveTab] = useState('note');
   const [noteText, setNoteText] = useState('');
+  const exerciseNames = getExerciseNames(workouts);
+
+  function handleSaveNote() {
+    const newWorkouts = parseNote(noteText, toDateKey(new Date()), exerciseNames);
+    if (newWorkouts.length === 0) return;
+    setWorkouts([...workouts, ...newWorkouts]);
+    setNoteText('');
+    setActiveTab('calendar');
+  }
+
+  function handleDeleteWorkout(id) {
+    setWorkouts(workouts.filter((workout) => workout.id !== id));
+  }
 
   return (
     <div className="app">
@@ -22,9 +38,14 @@ function App() {
       <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
       <main>
         {activeTab === 'note' && (
-          <StickyNote noteText={noteText} onNoteChange={setNoteText} />
+          <StickyNote
+            noteText={noteText}
+            onNoteChange={setNoteText}
+            onSave={handleSaveNote}
+            exerciseNames={exerciseNames}
+          />
         )}
-        {activeTab === 'calendar' && <Calendar workouts={workouts} />}
+        {activeTab === 'calendar' && <Calendar workouts={workouts} onDeleteWorkout={handleDeleteWorkout} />}
         {activeTab === 'stats' && <p>Stats go here.</p>}
       </main>
     </div>

@@ -5,7 +5,7 @@ import { toDateKey, formatDateKey } from '../utils/dates';
 
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-function Calendar({ workouts }) {
+function Calendar({ workouts, onDeleteWorkout }) {
   const today = new Date();
   const todayKey = toDateKey(today);
   const [viewMonth, setViewMonth] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
@@ -57,7 +57,7 @@ function Calendar({ workouts }) {
       </div>
 
       <h3 className="selected-day">{formatDateKey(selectedDate)}</h3>
-      <WorkoutList workouts={selectedWorkouts} />
+      <WorkoutList workouts={selectedWorkouts} onDelete={onDeleteWorkout} />
     </section>
   );
 }
